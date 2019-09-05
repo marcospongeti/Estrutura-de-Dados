@@ -1,0 +1,41 @@
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <script>
+          let vet = [25, 57, 48, 37, 18, 92, 86, 33];
+
+    function bubble(a) {
+    let troca;
+    do {
+        troca = false;
+        for (var i=0; i < a.length-1; i++) {
+            if (a[i] > a[i+1]) {
+                let temp = a[i];
+                a[i] = a[i+1];
+                a[i+1] = temp;
+                troca = true;
+            }
+        }
+    } while (troca);
+}
+
+    bubble(vet);
+    console.log(vet);
+      
+        
+         
+      </script>
+   </head>
+
+   <body>
+      <h1></h1>
+      <p></p>
+   </body>
+</html>
+
+    
+           

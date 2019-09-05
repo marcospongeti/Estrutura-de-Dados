@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <script>
+          let vet = [25, 57, 48, 37, 12, 92, 86, 33];
+   
+        function insercaoDireta (a){
+            
+ 
+          for(i = 1; i < a.length; ++i){
+            let x = a[i], var = 0, num = i - 1;
+          
+          while(num >= 0 && var == 0){
+              if(x < a[num]){
+                a[num + 1] = a[num];
+                --num;
+              }
+          else
+            var = num + 1;
+      }
+      a[var] = x;
+   }
+        }
+
+       insercaoDireta(vet);
+       console.log(vet);
+         
+      </script>
+   </head>
+
+   <body>
+      <h1></h1>
+      <p></p>
+   </body>
+</html>

@@ -1,0 +1,104 @@
+<html>
+    <head>
+        <script>
+      
+     
+        
+       function aleatorio(min, max){
+           return Math.floor(Math.random()* 100)
+       }
+       let cont = 0
+       let vet2 =[] 
+       for(let i = 0; i < 100; i++ ){
+           vet2.push(aleatorio(1,999))
+        }
+        
+        let  vet3 = vet2.slice()
+        let  vet4 = vet2.slice()
+        let  vet5 = vet2.slice()
+         //  - bubblesort
+            //variavel auxiliar para guardar o valor do elemento maior
+            let aux = 0
+            function bubblesort(){
+                 document.write(vet5)
+                 document.write("<br>")
+                for(let i = 0 ; i < vet5.length; i++){
+                    for(let j = 0; j < vet5.length-1; j++){
+                        if(vet5[j] > vet5[j+1]){
+                        aux = vet5[j]
+                        vet5[j] = vet5[j+1]
+                        vet5[j+1] = aux
+                       
+                        }
+                    }
+                    document.write(vet5)
+                    document.write('<br>')
+                }
+                return vet5
+            }
+        document.write(bubblesort())
+        document.write("bubblesort")
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+        //seleção direta
+        let aux2
+          function selecaoDireta(){
+                document.write(vet4)
+                 document.write("<br>")
+                for(let i = 0 ; i < vet4.length-1; i++){
+                    aux2 = i
+                    for(let j = i+1; j < vet4.length; j++){
+                        if(vet4[j] < vet4[aux2]){
+                        aux2 = j
+                                            
+                        }
+                       
+                    }
+                    aux = vet2[i]
+                    vet4[i] = vet4[aux2]
+                    vet4[aux2] = aux
+                    console.log(vet4)
+                    document.write(vet4)
+                    document.write('<br>')
+                }
+                return vet4
+            }    
+            document.write(selecaoDireta())
+         document.write("selecão direta")
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+        //inserção direta
+         function insercaoDireta(){
+               document.write(vet3)
+                document.write("<br>")
+             let j = 0
+                for(let i = 1 ; i < vet3.length; i++){
+                    j = i-1 //  1ª checagem j neste momento tem valor do indice 0 (25)
+                    aux = vet3[i] // aux tem o valor do indice 1 (57)
+                    while(( j >=0)&& (vet3[j] > aux) ){ // verificação  j se for maior ou igual indice 0 e vetor[j](25) maior que aux (57)
+                        vet3[j+1] = vet3[j] //vet[j+1] (57) recebe o vet[j] = 25
+                        j = j-1             // j(0) = j -1 (0-1)
+                    }
+                       vet3[j+1] = aux // vet[j+1](57) = aux[25]
+                        
+                    
+                    document.write(vet3)
+                    document.write('<br>')
+                }
+                return vet3
+            }
+      document.write((insercaoDireta()))
+        document.write("inserção direta")
+        document.write("<br>")
+        document.write("<br>")
+        document.write("<br>")
+        </script>
+
+    </head>
+    <body>
+        <p>Isto é um paragrafo</p>
+    </body>
+
+</html>

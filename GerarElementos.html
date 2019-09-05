@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <script>
+   
+        let vet = [];
+
+        vet = parseInt(prompt("Informe números aleatórios"))
+        
+
+let vet2 = []
+            let entrada = 0
+            let j = 0
+            //variavel auxiliar para guardar o valor do elemento maior
+            let aux = 0
+            do{
+                entrada = parseInt(prompt("digite numero para entrar no vetor, Digite -1 para terminar a entrada de dados"))
+                vet2.push(entrada)
+            }while(entrada!= -1)
+            
+    
+    
+            function insercaoDireta(){
+                for(let i = 1 ; i < vet2.length; i++){
+                    j = i-1 //  1ª checagem j neste momento tem valor do indice 0 (25)
+                    aux = vet2[i] // aux tem o valor do indice 1 (57)
+                    while(( j >=0)&& (vet2[j] > aux) ){ // verificação  j se for maior ou igual indice 0 e vetor[j](25) maior que aux (57)
+                        vet2[j+1] = vet2[j] //vet[j+1] (57) recebe o vet[j] = 25
+                        j = j-1             // j(0) = j -1 (0-1)
+                    }
+                       vet2[j+1] = aux // vet[j+1](57) = aux[25]
+                        
+                    
+                    document.write(vet2)
+                    document.write('<br>')
+                }
+                return vet2
+            }
+      document.write((insercaoDireta()))
+         
+      </script>
+   </head>
+
+   <body>
+      <h1></h1>
+      <p></p>
+   </body>
+</html>
