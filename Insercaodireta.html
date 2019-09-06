@@ -10,21 +10,22 @@
             
  
           for(i = 1; i < a.length; ++i){
-            let x = a[i], var = 0, num = i - 1;
+            let x = a[i], num2 = 0, num = i - 1;
           
-          while(num >= 0 && var == 0){
+          while(num >= 0 && num2 == 0){
               if(x < a[num]){
                 a[num + 1] = a[num];
                 --num;
               }
           else
-            var = num + 1;
+            num2 = num + 1;
       }
-      a[var] = x;
+      a[num2] = x;
    }
         }
 
-       insercaoDireta(vet);
+       
+       insercaoDireta(vet)
        console.log(vet);
          
       </script>
