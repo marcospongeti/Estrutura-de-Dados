@@ -1,0 +1,39 @@
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <script>
+       let vet2 = [12,25,33,37,48,57,86];
+         
+    
+    function BuscaBinaria(primeiro, ultimo, Vetor, Valor) {
+                meioLista = Math.ceil((primeiro + ultimo) / 2);
+                if (Vetor[meioLista] == Valor) {
+                    return meioLista;
+                }
+                if (primeiro >= ultimo) {
+                    return -1
+                }
+                else {
+                    if (Valor < Vetor[meioLista]) {
+                       return BuscaBinaria(primeiro,meioLista-1,Vetor,Valor);
+                    }
+                    else {return BuscaBinaria(meioLista+1,ultimo,Vetor,Valor)
+                       
+                    }
+                }
+                
+            }
+
+
+document.write(BuscaBinaria(0, vet2.length -1, vet2, 3));
+
+         
+      </script>
+   </head>
+
+   <body>
+      <h1></h1>
+      <p></p>
+   </body>
+</html>

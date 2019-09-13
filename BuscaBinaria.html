@@ -1,0 +1,43 @@
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title></title>
+      <script>
+       let vet2 = [12,25,33,37,48,57,86];
+         
+    
+    function BuscaBinaria(Vetor, num) {
+        let p = 0, ultimo = Vetor.length - 1, valor = false, indice = 0;
+    
+    while (p <= ultimo && !valor) {
+        let meioLista = Math.ceil((p + ultimo) / 2);
+        
+        if (Vetor[meioLista] == num) {
+            valor = true;
+            indice = Vetor.indexOf(num);
+        }
+        else {
+            if (num < Vetor[meioLista]) {
+                ultimo = meioLista - 1;
+            }
+            else {
+                p = meioLista + 1;
+  
+            }
+        }
+    }
+    return indice;
+    }
+
+
+document.write(BuscaBinaria(vet2, 33));
+
+         
+      </script>
+   </head>
+
+   <body>
+      <h1></h1>
+      <p></p>
+   </body>
+</html>
