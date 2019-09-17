@@ -1,0 +1,141 @@
+<html lang="pt-br">
+   <head>
+      <meta charset="utf-8">
+      <title>Trabalho Estrutura de dados</title>
+      <script>
+      //Marcos Pongeti 3 ADS Noturno
+      //Lucas Malta de Oliveira 3 ADS Manhã 
+      
+       let vet = [25, 57, 48, 37, 12, 92, 86, 33, 587, 87, 1, 31, 55, 21, 987, 8, 99, 11, 7];
+
+      //BubbleSort
+         function bubble(a) {
+            let troca;
+           do {
+            troca = false;
+              for (var i=0; i < a.length-1; i++) {
+                if (a[i] > a[i+1]) {
+                let temp = a[i];
+                 a[i] = a[i+1];
+                 a[i+1] = temp;
+                 troca = true;
+                }
+              }
+           } while (troca);
+         }
+
+         
+            
+            //Selecao Direta
+            let aux = 0, aux2 = 0;
+            function selecaoDireta(vet2){
+                
+                for(let i = 0 ; i < vet2.length-1; i++){
+                    aux2 = i
+                    for(let ind = i+1; ind < vet2.length; ind++){
+                        if(vet2[ind] < vet2[aux2]){
+                            aux2 = ind
+                        }
+                       
+                    }
+                    aux = vet2[i]
+                    vet2[i] = vet2[aux2]
+                    vet2[aux2] = aux
+                    }
+                return vet2
+            }    
+         
+
+             //Inserção Direta
+             function insercaoDireta(vet3){
+                 for(i = 1; i < vet3.length; ++i){
+                     
+                  let x = vet3[i], num2 = 0, num = i - 1;
+            
+                 while(num >= 0 && num2 == 0){
+                   if(x < vet3[num]){
+                    vet3[num + 1] = vet3[num];
+                     --num;
+                   }
+                   else
+                    num2 = num + 1;
+        
+                 }
+                vet3[num2] = x;
+     }
+          
+             }
+
+             //QuickSort
+             function  quicksort(array, left, right){
+                 var i = left;
+                 var ind = right;
+                 var tmp;
+                 var pivotidx = (left + right) / 2;
+                 var pivot = parseInt(array[pivotidx.toFixed()]); 
+             //PARTIÇÃO
+          while (i <= ind){
+          while (parseInt(array[i]) < pivot)
+            i++;
+          while (parseInt(array[ind]) > pivot)
+            ind--;
+          if (i <= ind){
+            tmp = array[i];
+            array[i] = array[ind];
+            array[ind] = tmp;
+            i++;
+            ind--;
+        }
+    }
+       //RECURSÃO
+       if (left < ind)
+        quicksort(array, left, ind);
+       if (i < right)
+        quicksort(array, i, right);
+      return array;
+}
+  
+         //Escolha do método 
+         let escolher;
+         escolher = parseInt(prompt("Escolha 0 para BubbleSort, 1 para Seleção Direta, 2 para Inserção Direta e 3 para QuickSort"));
+
+
+         switch (escolher){
+             case 0: 
+             bubble(vet);
+             document.write(vet);
+             break;
+
+             case 1:
+             selecaoDireta(vet);
+             document.write(vet);
+             break;
+
+             case 2:
+             insercaoDireta(vet);
+             document.write(vet);
+             break;
+
+             default:
+             quicksort(vet, 0, vet.length-1);
+             document.write(vet);
+             }
+        
+        //chamadas das funções:
+         //quicksort(vet, 0, vet.length-1);
+         //insercaoDireta(vet);
+         //selecaoDireta(vet);
+         //bubble(vet);
+         
+         
+         
+      
+    </script>
+   
+     </head>
+
+   <body>
+      <h1></h1>
+      <p></p>
+   </body>
+</html>
